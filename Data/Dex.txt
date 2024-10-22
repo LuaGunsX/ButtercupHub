@@ -1,0 +1,1 @@
+workspace.GetObjects:InvokeServer('rbxassetid://12269893284')[1].Parent=game.Players.LocalPlayer.PlayerGui
