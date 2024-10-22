@@ -1,0 +1,414 @@
+local scripttabList = {
+	{"Infinite Yield", "MjBzRjmT", 1},
+	{"Knife V3", "W833RBFr", 1},
+	{"Bird Wings", "RQ9b8UTv", 1},
+	{"Clockwork Arena", "EvnXCXhP", 1},
+	{"M4A1", "eP1zq8tb", 1},
+	{"Dungun", "90M7Mi8e", 1},
+	{"Bomb Vest", "tG1PPuMd", 1},
+	{"Music Bars", "SvYebC2r", 1},
+	{"Omni God", "87NeeChc", 1},
+	{"Night Club", 1281063730, 2},
+	{"Pain Titan", "Hg5L8EtM", 1,},
+	{"Reaper Titan", "B0q3QBg6", 1},
+	{"Alter Chat", "ZSB4pN9R", 1},
+	{"Hoverbike", 01268225564, 2},
+	{"Rail Gun Titan", "0wFiFdwM", 1},
+	{"True Hero", "P8AQ2ebJ", 1},
+	{"Celestial Wheel", "bymTcgzf", 1},
+	{"Knive V4", "j0Ns1w1S", 1},
+	{"Ravenger Claws", "D7GxxvWL", 1},
+	{"John Doe", "m5wHsLhr", 1},
+	{"Messor Titan", "4bSrkLtA", 1},
+	{"Clown Titan", "L0WLDZvc", 1},
+	{"Chara", "HrWjgXtb", 1},
+	{"Town Map", 1345094164, 2},
+	{"Shedlesky Rage", "2SPz35LS", 1},
+	{"LunchaThug", "x6GWFC5K", 1},
+	{"Nazi", "ZCZNxFBD", 1},
+	{"Psychopath", "DGqk3bqY", 1},
+	{"Fireworks Wand", "GB29NAPv", 1},
+	{"Psycho Clown", "UgxKqKwE", 1},
+	{"Inferno", "qhMGk36S", 1},
+	{"Police Titan", "UCmufLU8", 1},
+	{"Galaxy Titan", "nKNdCrKj", 1},
+	{"Holy Wrench", "cKSh0a8C", 1},
+	{"Krystal Dance", "j7EqLfbP", 1},
+	{"Nazi Camp", "KJNk4STm", 1},
+	{"Pee", "3CYmA0Pz", 1},
+	{"Jihad", "vSujnuaF", 1},
+	{"Hermit Purple", "R3C3ajQV", 1},
+	{"Golden Gun", "2574Sd9E", 1},
+	{"Goku", "yAXZZF9r", 1},
+	{"Emoji", "vKPcMKnm", 1},
+	{"Damn Son", "AMLHT8aJ", 1},
+	{"Devuzi", "q0mt2peM", 1},
+	{"Flash", "gGSVVq1H", 1},
+	{"Teal Scythe", "0TUBSaxt", 1},
+	{"Demon Demise", "ghMDMW63", 1},
+	{"Red Sayan", "uC5DBvf9", 1},
+	
+}
+
+local fescripttabList = {
+	{"Fe God", "KduGECH6", 1},
+	{"Fe Fly", 1281055032, 2},
+	{"City Life Grabknife", "ZhwF6H2V", 1},
+	{"City Life Bomb Vest", "sLHGSBn1", 1},
+	{"City Life Suicide", "YdKKQ7yT", 1},
+	{"City Life Explosion", "vy78mqrG", 1},
+	{"Fe Invisible", 1180480887, 2},
+	{"Spam", "74GjB7tB", 1},
+	{"Lag Switch", "58gjTUf5", 1},
+	{"Jailbreak Farm", "1461971147", 2},
+}
+
+local guitabList = {
+	{"c00lgui", "Rz2EFsLU", 1},
+	{"Topkek 4.0", "d0CJRrcg", 1},
+	{"Topkek 3.0", "SikGfE9u", 1},
+	{"Ro-Xploit 4.0", 175137115, 2},
+	{"Ro-Xploit 5.0", 288646117, 2},
+	{"Ro-Xploit 6.0", 364364477, 2},
+	{"Dex 3.0", 492005721, 2},
+	{"Clown Van", "a5UZuuiT", 1},
+	{"Hell Elevator Gui", "8NYWpf2T", 1},
+	{"Chams / Aimlock", "Yi7fzELj", 1},
+}
+
+local gui = game:GetService("Players").LocalPlayer.PlayerGui
+
+--Intro
+local Intro = Instance.new("ScreenGui",gui)
+local a,c = 0,0
+local IntroRose = Instance.new("ImageLabel")
+IntroRose.Parent = Intro
+IntroRose.ZIndex = 2
+IntroRose.Size = UDim2.new(0,100,0,100)
+IntroRose.BackgroundTransparency = 1
+IntroRose.AnchorPoint = Vector2.new(.5,0)
+IntroRose.Position = UDim2.new(.5,0,-1,0)
+IntroRose.Image = 'rbxassetid://1342740333'
+repeat a = a + 1
+	c = c + .5/6
+	for x = -1,1,.1 do
+		local y = x^2
+		game:GetService('TweenService'):Create(IntroRose,TweenInfo.new(.3),{Rotation = math.rad(x*50)*30+50}):Play()
+		IntroRose:TweenPosition(UDim2.new(.5,x*125,c,-y*125),'Out','Sine',nil,true)
+		wait()
+	end
+	c = c + .5/6
+	for x = 1,-1,-.1 do
+		local y = x^2
+		game:GetService('TweenService'):Create(IntroRose,TweenInfo.new(.3),{Rotation = math.rad(x*95)*30+45}):Play()
+		IntroRose:TweenPosition(UDim2.new(.5,x*100,c,-y*100),'Out','Sine',nil,true)
+		wait()
+	end
+until a == 3
+game:GetService('TweenService'):Create(IntroRose,TweenInfo.new(.5),{Rotation = 36000}):Play()
+local IntroText = Instance.new("TextLabel")
+IntroText.Parent = Intro
+IntroText.TextSize = 40
+IntroText.Font = Enum.Font.Fantasy
+IntroText.Text = 'Rose Hub'
+IntroText.Position = UDim2.new(-1,0,.5,0)
+IntroText.AnchorPoint = Vector2.new(.5,.5)
+IntroText.Size = UDim2.new(0,200,0,50)
+IntroText.TextColor3 = Color3.new(1,1,1)
+IntroText.BackgroundColor3 = Color3.fromRGB(255,85,127)
+IntroText.BackgroundTransparency = .35
+IntroText:TweenPosition(UDim2.new(.5,0,.5,-20),'Out','Sine',nil,true)
+wait(2)
+IntroText:TweenPosition(UDim2.new(.5,0,-.5,-20),'In','Back',1,true)
+game:GetService('TweenService'):Create(IntroRose,TweenInfo.new(.3),{ImageTransparency = 1}):Play()
+wait(1)
+Intro:Destroy()
+
+local function makeFrame(Active, BackgroundColor3, BackgroundTransparency, Name, Parent, Position, Size, Draggable, Selectable, AnchorPoint, BorderSizePixel)
+	local Frame = Instance.new("Frame")
+	Frame.Active = Active
+	Frame.BackgroundColor3 = BackgroundColor3
+	Frame.BackgroundTransparency = BackgroundTransparency
+	Frame.Name = Name
+	Frame.Parent = Parent
+	Frame.Position = Position
+	Frame.Size = Size
+	Frame.Draggable = Draggable
+	Frame.Selectable = Selectable
+	Frame.AnchorPoint = AnchorPoint
+	Frame.BorderSizePixel = BorderSizePixel
+end
+
+local function makeScrollingFrame(BackgroundTransparency, Name, Parent, Position, Size, CanvasSize, ScrollBarThickness) --Canvas size is no longer used so whatever
+	local ScrollingFrame = Instance.new("ScrollingFrame")
+	ScrollingFrame.BackgroundTransparency = BackgroundTransparency
+	ScrollingFrame.Name = Name
+	ScrollingFrame.Parent = Parent
+	ScrollingFrame.Position = Position
+	ScrollingFrame.Size = Size
+	ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+	ScrollingFrame.ScrollBarThickness = ScrollBarThickness
+end
+
+local function makeTextLabel(BackgroundColor3, BackgroundTransparency, Name, Parent, Size, Font, Text, TextColor3, TextSize, Position, TextStrokeColor3, TextWrapped)
+	local TextLabel = Instance.new("TextLabel")
+	TextLabel.BackgroundColor3 = BackgroundColor3
+	TextLabel.BackgroundTransparency = BackgroundTransparency
+	TextLabel.Name = Name
+	TextLabel.Parent = Parent
+	TextLabel.Size = Size
+	TextLabel.Font = Font
+	TextLabel.Text = Text
+	TextLabel.TextColor3 = TextColor3
+	TextLabel.TextSize = TextSize
+	TextLabel.Position = Position
+	TextLabel.TextStrokeColor3 = TextStrokeColor3
+	TextLabel.TextWrapped = TextWrapped
+end
+
+local function makeTextButton(BackgroundColor3, BackgroundTransparency, Name, Parent, Position, Size, Font, Text, TextColor3, TextSize, Selected, func)
+	local TextButton = Instance.new("TextButton")
+	TextButton.BackgroundColor3 = BackgroundColor3
+	TextButton.BackgroundTransparency = BackgroundTransparency
+	TextButton.Name = Name
+	TextButton.Parent = Parent
+	TextButton.Position = Position
+	TextButton.Size = Size
+	TextButton.Font = Font
+	TextButton.Text = Text
+	TextButton.TextColor3 = TextColor3
+	TextButton.TextSize = TextSize
+	TextButton.Selected = Selected
+	TextButton.MouseButton1Down:connect(func)
+end
+
+local function makeImageLabel(BackgroundColor3, BorderSizePixel, Name, Parent, Size, Image, BorderColor3, Position)
+	local ImageLabel = Instance.new("ImageLabel")
+	ImageLabel.BackgroundColor3 = BackgroundColor3
+	ImageLabel.BorderSizePixel = BorderSizePixel
+	ImageLabel.Name = Name
+	ImageLabel.Parent = Parent
+	ImageLabel.Size = Size
+	ImageLabel.Image = Image
+	ImageLabel.BorderColor3 = BorderColor3
+	ImageLabel.Position = Position
+end
+
+function fixScroll(who) --by Royale Ruby: for v4rx members https://discord.gg/jaDjHMn
+	if not who.Parent:FindFirstChild('ScrollingFrameFixers') then Instance.new("Folder",who.Parent).Name = 'ScrollingFrameFixers' end
+	local fix = Instance.new("Frame",who.Parent.ScrollingFrameFixers)
+	fix.Size = UDim2.new(0,who.ScrollBarThickness,who.Size.Y.Scale,who.Size.Y.Offset)
+	fix.AnchorPoint = who.AnchorPoint
+	fix.Position = who.Position + UDim2.new(who.Size.X,0,0) - UDim2.new(0,who.AbsoluteSize.X*who.AnchorPoint.X,0,0) - UDim2.new(0,who.ScrollBarThickness*(1-who.AnchorPoint.X),0,0)
+	fix.Transparency = 1
+	fix.InputBegan:connect(function()
+		local check = who:GetFullName()
+		local what = game
+	who.Active = false
+	while check:find('%p')do
+		local name = check:sub(1,check:find'%p'-1)
+			if name ~= 'game' then
+				what = what[name]
+				if what:IsA('GuiObject') and who:IsDescendantOf(what) then
+					what.Active = false
+				end
+			end
+			check = check:sub(check:find'%p'+1)
+		end
+	end)
+	fix.InputEnded:connect(function()
+		local check = who:GetFullName()
+		local what = game
+		who.Active = true
+		while check:find('%p')do
+			local name = check:sub(1,check:find'%p'-1)
+			if name ~= 'game' then
+				what = what[name]
+				if what:IsA('GuiObject') and who:IsDescendantOf(what) then
+					what.Active = true
+				end
+			end
+			check = check:sub(check:find'%p'+1)
+			end
+	end)
+end
+
+--Make Screen
+screenGui = Instance.new("ScreenGui")
+screenGui.Parent = gui
+screenGui.Name = "RoseHubClone"
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0.35, "open", screenGui, UDim2.new(-0.5, 0, 0.5, 0), UDim2.new(0, 195, 0, 61), true, false, Vector2.new(0, 0), 1)
+
+makeTextButton(Color3.fromRGB(255, 255, 255), 1, "openbutton", screenGui.open, UDim2.new(-0.026, 0, 0, 0), UDim2.new(0, 200, 0, 61), Enum.Font.Fantasy, "OPEN", Color3.fromRGB(255, 255, 255), 32, false, function()
+	screenGui.main:TweenPosition(UDim2.new(0.5,-screenGui.main.Size.X.Offset/2,0.5,-screenGui.main.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.open:TweenPosition(UDim2.new(-1,0,0.531,0), "Out", "Quad", 0.6)
+end)
+
+screenGui.open:TweenPosition(UDim2.new(0, 0, 0.5, 0),'Out','Quad',0.6)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0.35, "main", screenGui, UDim2.new(-2, -154, 0.5, -180), UDim2.new(0, 309, 0, 360), true, false, Vector2.new(0, 0), 1)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0, "upper", screenGui.main, UDim2.new(0, 0, 0, 0), UDim2.new(0, 309, 0, 41), false, false, Vector2.new(0, 0), 1)
+
+makeTextLabel(Color3.fromRGB(255, 255, 255), 1, "name", screenGui.main.upper, UDim2.new(0, 309, 0, 41), Enum.Font.Fantasy, "Rose Hub v1.1.3", Color3.fromRGB(255, 255, 255), 30, UDim2.new(0, 0, 0, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeImageLabel(Color3.fromRGB(255, 84, 126), 0, "mainrose", screenGui.main.upper, UDim2.new(0, 45, 0, 41), "http://www.roblox.com/asset/?id=1342740333", Color3.fromRGB(27, 42, 53), UDim2.new(0, 0, 0, 0))
+
+makeTextButton(Color3.fromRGB(255, 0, 126), 0.35, "scripts", screenGui.main, UDim2.new(0.175, 0, 0.192, 0), UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Scripts", Color3.fromRGB(255, 255, 255), 32, false, function()
+	screenGui.scripttab:TweenPosition(UDim2.new(0.5,-screenGui.scripttab.Size.X.Offset/2,0.5,-screenGui.scripttab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(-1,0,0.531,0), "Out", "Quad", 0.6)
+end)
+
+makeTextButton(Color3.fromRGB(255, 255, 255), 1, "close", screenGui.main, UDim2.new(0.854, 0, 0, 0), UDim2.new(0, 45, 0, 35), Enum.Font.SourceSans, "x", Color3.fromRGB(255, 255, 255), 48, false, function()
+	screenGui.main:TweenPosition(UDim2.new(-2,-screenGui.main.Size.X.Offset/2,0.5,-screenGui.main.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.open:TweenPosition(UDim2.new(0,0,0.531,0), "Out", "Quad", 0.6)
+end)
+
+makeTextButton(Color3.fromRGB(255, 0, 126), 0.35, "fescripts", screenGui.main, UDim2.new(0.176, 0, 0.378, 0), UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "FE Scripts", Color3.fromRGB(255, 255, 255), 30, false, function()
+	screenGui.fescripttab:TweenPosition(UDim2.new(0.5,-screenGui.fescripttab.Size.X.Offset/2,0.5,-screenGui.fescripttab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(-1,0,0.531,0), "Out", "Quad", 0.6)
+end)
+
+makeTextButton(Color3.fromRGB(255, 0, 126), 0.35, "guis", screenGui.main, UDim2.new(0.176, 0, 0.564, 0), UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "GUIs", Color3.fromRGB(255, 255, 255), 30, false, function()
+	screenGui.guitab:TweenPosition(UDim2.new(0.5,-screenGui.guitab.Size.X.Offset/2,0.5,-screenGui.guitab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(-1,0,0.531,0), "Out", "Quad", 0.6)
+end)
+
+makeTextButton(Color3.fromRGB(255, 0, 126), 0.35, "credits", screenGui.main, UDim2.new(0.176, 0, 0.764, 0), UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Credits", Color3.fromRGB(255, 255, 255), 32, false, function()
+	screenGui.creditstab:TweenPosition(UDim2.new(0.5,-screenGui.creditstab.Size.X.Offset/2,0.5,-screenGui.creditstab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(-1,0,0.531,0), "Out", "Quad", 0.6)
+end)
+
+makeTextLabel(Color3.fromRGB(255, 255, 255), 1, "motd", screenGui.main, UDim2.new(0, 200, 0, 23), Enum.Font.Fantasy, "MOTD: Am ok", Color3.fromRGB(255, 255, 255), 15, UDim2.new(0.178, 0, 0.936, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0.35, "scripttab", screenGui, UDim2.new(-2, -154, 0.5, -180), UDim2.new(0, 571, 0, 293), true, false, Vector2.new(0, 0), 1)
+
+makeScrollingFrame(1, "scriptstab", screenGui.scripttab, UDim2.new(0, 0, 0, 38), UDim2.new(1, 0, 1, -38), UDim2.new(0, 0, 2.5, 0), 11)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0, "scriptstop", screenGui.scripttab, UDim2.new(0, 0, 0, 0), UDim2.new(0, 571, 0, 38), false, true, Vector2.new(0, 0), 1)
+
+makeTextLabel(Color3.fromRGB(255, 255, 255), 1, "scriptslabel", screenGui.scripttab.scriptstop, UDim2.new(0, 565, 0, 38), Enum.Font.Fantasy, "Scripts", Color3.fromRGB(255, 255, 255), 30, UDim2.new(0.006, 0, 0, 0), Color3.fromRGB(255, 255, 255), false)
+
+makeImageLabel(Color3.fromRGB(255, 84, 126), 0, "scriptsrose", screenGui.scripttab.scriptstop, UDim2.new(0, 41, 0, 38), "http://www.roblox.com/asset/?id=1342740333", Color3.fromRGB(255, 0, 126), UDim2.new(0.003, 0, 0, 0))
+
+makeTextButton(Color3.fromRGB(255, 255, 255), 1, "sclose", screenGui.scripttab.scriptstop, UDim2.new(0.981, -35, -0.026, 5), UDim2.new(0, 30, 0, 30), Enum.Font.SourceSans, "X", Color3.fromRGB(255, 255, 255), 48, false, function()
+	screenGui.scripttab:TweenPosition(UDim2.new(-2,-screenGui.scripttab.Size.X.Offset/2,0.5,-screenGui.scripttab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(0.5,-screenGui.main.Size.X.Offset/2,0.5,-screenGui.main.Size.Y.Offset/2), "Out", "Quad", 0.6)
+end)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0.35, "creditstab", screenGui, UDim2.new(-2, -154, 0.5, -180), UDim2.new(0, 493, 0, 267), true, false, Vector2.new(0, 0), 1)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0, "cupper", screenGui.creditstab, UDim2.new(0, 0, 0, 0), UDim2.new(0, 493, 0, 40), false, false, Vector2.new(0, 0), 1)
+
+makeTextLabel(Color3.fromRGB(255, 255, 255), 1, "cname", screenGui.creditstab.cupper, UDim2.new(0, 493, 0, 41), Enum.Font.Fantasy, "Credits", Color3.fromRGB(255, 255, 255), 30, UDim2.new(0, 0, 0, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeImageLabel(Color3.fromRGB(255, 84, 126), 0, "creditsrose", screenGui.creditstab.cupper, UDim2.new(0, 45, 0, 40), "http://www.roblox.com/asset/?id=1342740333", Color3.fromRGB(27, 42, 53), UDim2.new(0, 0, 0, 0))
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "madeby", screenGui.creditstab, UDim2.new(0, 100, 0, 23), Enum.Font.Fantasy, "Made by Humanoid and Zwolf", Color3.fromRGB(255, 255, 255), 35, UDim2.new(0.398, 0, 0.208, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "zwolf", screenGui.creditstab, UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Zwolf#3762", Color3.fromRGB(207, 207, 207), 25, UDim2.new(0.558, 0, 0.461, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "humanoid", screenGui.creditstab, UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Humanoid#0001", Color3.fromRGB(207, 207, 207), 25, UDim2.new(-0.001, 0, 0.461, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "humanoidcredits", screenGui.creditstab, UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Idea | UI | Scripting | Tweening", Color3.fromRGB(255, 255, 255), 20, UDim2.new(0, 0, 0.326, 0), Color3.fromRGB(0, 0, 0), true)
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "zwolfcredits", screenGui.creditstab, UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Logo | Buttons | Scripting", Color3.fromRGB(255, 255, 255), 20, UDim2.new(0.558, 0, 0.326, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeTextButton(Color3.fromRGB(255, 255, 255), 1, "cclose", screenGui.creditstab, UDim2.new(0.909, 0, 0, 0), UDim2.new(0, 45, 0, 35), Enum.Font.SourceSans, "x", Color3.fromRGB(255, 255, 255), 40, false, function()
+	screenGui.creditstab:TweenPosition(UDim2.new(-2,-screenGui.creditstab.Size.X.Offset/2,0.5,-screenGui.creditstab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(0.5,-screenGui.main.Size.X.Offset/2,0.5,-screenGui.main.Size.Y.Offset/2), "Out", "Quad", 0.6)
+end)
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "ctahmid", screenGui.creditstab, UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "ctahmid#5491", Color3.fromRGB(207, 207, 207), 25, UDim2.new(0.298, 0, 0.723, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeTextLabel(Color3.fromRGB(255, 84, 126), 1, "ctahmidcredits", screenGui.creditstab, UDim2.new(0, 200, 0, 50), Enum.Font.Fantasy, "Tweening", Color3.fromRGB(255, 255, 255), 20, UDim2.new(0.298, 0, 0.624, 0), Color3.fromRGB(0, 0, 0), false)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0.35, "guitab", screenGui, UDim2.new(-2, -154, 0.5, -180), UDim2.new(0, 571, 0, 293), true, false, Vector2.new(0, 0), 1)
+
+makeScrollingFrame(1, "guistab", screenGui.guitab, UDim2.new(0, 0, 0, 28), UDim2.new(1, 0, 1, -28), UDim2.new(0, 0, 2, 0), 11)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0, "guistop", screenGui.guitab, UDim2.new(0, 0, 0, 0), UDim2.new(0, 571, 0, 38), false, true, Vector2.new(0, 0), 1)
+
+makeTextLabel(Color3.fromRGB(255, 255, 255), 1, "guislabel", screenGui.guitab.guistop, UDim2.new(0, 565, 0, 38), Enum.Font.Fantasy, "GUIs", Color3.fromRGB(255, 255, 255), 30, UDim2.new(0.006, 0, 0, 0), Color3.fromRGB(255, 255, 255), false)
+
+makeImageLabel(Color3.fromRGB(255, 84, 126), 0, "guisrose", screenGui.guitab.guistop, UDim2.new(0, 41, 0, 38), "http://www.roblox.com/asset/?id=1342740333", Color3.fromRGB(255, 0, 126), UDim2.new(0.003, 0, 0, 0))
+
+makeTextButton(Color3.fromRGB(255, 255, 255), 1, "gclose", screenGui.guitab.guistop, UDim2.new(0.981, -35, -0.0263, 5), UDim2.new(0, 30, 0, 30), Enum.Font.SourceSans, "X", Color3.fromRGB(255, 255, 255), 40, false, function()
+	screenGui.guitab:TweenPosition(UDim2.new(-2,-screenGui.guitab.Size.X.Offset/2,0.5,-screenGui.guitab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(0.5,-screenGui.main.Size.X.Offset/2,0.5,-screenGui.main.Size.Y.Offset/2), "Out", "Quad", 0.6)
+end)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0.35, "fescripttab", screenGui, UDim2.new(-2, -154, 0.5, -180), UDim2.new(0, 571, 0, 293), true, false, Vector2.new(0, 0), 1)
+
+makeScrollingFrame(1, "fescriptstab", screenGui.fescripttab, UDim2.new(0, 0, 0, 38), UDim2.new(1, 0, 1, -38), UDim2.new(0, 0, 2.5, 0), 11)
+
+makeFrame(true, Color3.fromRGB(255, 84, 126), 0, "fescriptstop", screenGui.fescripttab, UDim2.new(0, 0, 0, 0), UDim2.new(0, 571, 0, 38), false, true, Vector2.new(0, 0), 1)
+
+makeTextLabel(Color3.fromRGB(255, 255, 255), 1, "fescriptslabel", screenGui.fescripttab.fescriptstop, UDim2.new(0, 565, 0, 38), Enum.Font.Fantasy, "FE Scripts", Color3.fromRGB(255, 255, 255), 30, UDim2.new(0.006, 0, 0, 0), Color3.fromRGB(255, 255, 255), false)
+
+makeTextButton(Color3.fromRGB(255, 255, 255), 1, "fclose", screenGui.fescripttab.fescriptstop, UDim2.new(0.981, -35, -0.026, 5), UDim2.new(0, 30, 0, 30), Enum.Font.SourceSans, "X", Color3.fromRGB(255, 255, 255), 48, false, function()
+	screenGui.fescripttab:TweenPosition(UDim2.new(-2,-screenGui.fescripttab.Size.X.Offset/2,0.5,-screenGui.fescripttab.Size.Y.Offset/2), "Out", "Quad", 0.6)
+	screenGui.main:TweenPosition(UDim2.new(0.5,-screenGui.main.Size.X.Offset/2,0.5,-screenGui.main.Size.Y.Offset/2), "Out", "Quad", 0.6)
+end)
+
+makeImageLabel(Color3.fromRGB(255, 84, 126), 0, "fescriptsrose", screenGui.fescripttab.fescriptstop, UDim2.new(0, 41, 0, 38), "http://www.roblox.com/asset/?id=1342740333", Color3.fromRGB(255, 0, 126), UDim2.new(0.003, 0, 0, 0))
+
+local sortedScripts = {}
+local sortedFeScripts = {}
+local sortedGuis = {}
+
+local function sort(list, sortedList)
+	local toSort = {}
+	for i,v in pairs(list) do
+		table.insert(toSort, v[1])
+	end
+	
+	table.sort(toSort)
+	
+	for i,name in pairs(toSort) do
+		for i,actualTable in pairs(list) do
+			if name == actualTable[1] then
+				table.insert(sortedList, {actualTable[1], actualTable[2], actualTable[3]})
+			end
+		end
+	end
+end
+
+sort(scripttabList, sortedScripts)
+sort(fescripttabList, sortedFeScripts)
+sort(guitabList, sortedGuis)
+
+local function makeMoarButtons(list, parent)
+	local xPos = 30
+	local yPos = 30
+	local ran = 0
+	for i,button in pairs(list) do
+		makeTextButton(Color3.fromRGB(255, 84, 126), 0, button[1], parent, UDim2.new(0, xPos, 0, yPos), UDim2.new(0, 150, 0, 44), Enum.Font.Fantasy, button[1], Color3.fromRGB(255, 255, 255),  20, true, function()
+			if button[3] == 1 then
+				loadstring(game:HttpGet("https://pastebin.com/raw/"..button[2], true))()
+			elseif button[3] == 2 then
+				loadstring(game:GetObjects("rbxassetid://"..button[2])[1].Source)()
+			end
+		end)
+		ran = ran + 1
+		xPos = xPos + 180
+		if ran == 3 then
+			ran = 0
+			xPos = 30
+			yPos = yPos + 74
+		end
+	end
+	if ran > 0 then
+		yPos = yPos + 74
+	end
+	parent.CanvasSize = UDim2.new(1, 0, 0, yPos)
+end
+
+makeMoarButtons(sortedScripts, screenGui.scripttab.scriptstab)
+makeMoarButtons(sortedFeScripts, screenGui.fescripttab.fescriptstab)
+makeMoarButtons(sortedGuis, screenGui.guitab.guistab)
+
+fixScroll(screenGui.scripttab.scriptstab)
+fixScroll(screenGui.fescripttab.fescriptstab)
+fixScroll(screenGui.guitab.guistab)
